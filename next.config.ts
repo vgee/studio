@@ -1,13 +1,15 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['localhost', 'example.com'],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  experimental: {
+    typedRoutes: false,
   },
-};
+  // Пример произвольной опции, для которой мы создадим augmentation типов
+  // myCustomOption: true,
+}
 
-export default nextConfig;
+export default nextConfig

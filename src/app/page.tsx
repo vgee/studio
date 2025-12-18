@@ -6,6 +6,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import PushWithToastExample from '@/components/push-with-toast-example'
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -69,6 +70,11 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Demo: Push with toast example (for manual testing) */}
+      <div className="mt-8">
+        <PushWithToastExample />
       </div>
     </div>
   );
