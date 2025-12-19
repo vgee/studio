@@ -4,13 +4,8 @@ import 'next'
 
 declare module 'next' {
   interface NextApiRequest {
-    user?: {
-      id: string
-      email?: string
-      roles?: string[]
-    }
+    user?: any
   }
 }
 
 export {}
-

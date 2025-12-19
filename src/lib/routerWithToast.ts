@@ -1,3 +1,4 @@
+// typescript
 export type PushWithToast = (url: string, options?: { toastMessage?: string }) => Promise<boolean>
 
 // attachPushWithToast: добавляет метод pushWithToast к объекту router (mutates router)
@@ -12,7 +13,7 @@ export function attachPushWithToast(router: any): any {
         try {
           const mod = await import('@/hooks/use-toast')
           // ожидание, что модуль экспортирует named `toast` или default функцию
-          const toastFn = (mod && (mod.toast || mod.default)) as unknown as ((opts: { title: string }) => void) | undefined
+          const toastFn = ((mod as any).toast || (mod as any).default) as ((opts: { title: string }) => void) | undefined
           if (typeof toastFn === 'function') {
             toastFn({ title: options.toastMessage })
           }
